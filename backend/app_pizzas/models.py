@@ -4,7 +4,7 @@ from django.db import models
 class Pizzas(models.Model):
     
     class Meta:
-        db_table = 'pizza'
+        db_table = 'pizza_mysql'
     
     nombre = models.CharField(max_length=200, unique=True)
     
