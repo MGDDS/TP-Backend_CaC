@@ -32,7 +32,8 @@ ALLOWED_HOSTS = []
 
 CUSTOM_APPS = [
     "app_pizzas",
-    "rest_framework"
+    "rest_framework",
+    "corsheaders"
     
 ]
 
@@ -50,6 +51,7 @@ INSTALLED_APPS += CUSTOM_APPS
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -133,8 +135,14 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Other settings...
 
-# CSRF settings
+
+# Security settings
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '[::1]']
+
 CSRF_TRUSTED_ORIGINS = [
     'https://localhost:8000',
+    'http://localhost:8000',  # if also using http
+    'http://localhost:8080'
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
