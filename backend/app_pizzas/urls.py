@@ -3,7 +3,7 @@ from rest_framework.routers import DefaultRouter
 from .views import PizzaViewSet
 
 router=DefaultRouter()
-router.register('', PizzaViewSet, basename="pizza")
+router.register('pizza', PizzaViewSet, basename="pizza")
 
 urlpatterns = [
     path('', include(router.urls)) # rutas generadas automaticamente
