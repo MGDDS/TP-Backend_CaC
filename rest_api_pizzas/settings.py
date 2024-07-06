@@ -32,8 +32,8 @@ ALLOWED_HOSTS = []
 
 CUSTOM_APPS = [
     "app_pizzas",
-    "rest_framework",
-    "corsheaders"
+    "rest_framework"
+    
 ]
 
 INSTALLED_APPS = [
