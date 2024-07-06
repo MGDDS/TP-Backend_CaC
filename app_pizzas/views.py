@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from .models import Pizzas
+from .serializer import PizzaSerializer
+from rest_framework import viewsets
 
-# Create your views here.
+
+class PizzaViewSet(viewsets.ModelViewSet):
+    queryset=Pizzas.objects.all()
+    serializer_class=PizzaSerializer
